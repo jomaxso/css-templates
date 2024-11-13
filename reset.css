@@ -1,0 +1,106 @@
+@layer reset {
+    :root {
+        /*  base    */
+        --font-family-base: system-ui;
+        --font-family-base-line-height: 1.6;
+
+        /*  heading */
+        --font-family-heading: system-ui;
+        --font-family-heading-line-height: 1.1;
+
+        /*  code    */
+        --font-family-code: monospace;
+
+        /*  body    */
+        --body-max-width: 75ch;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        -moz-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+
+        font-family: var(--font-family-base, system-ui), sans-serif;
+        color-scheme: dark light;
+        interpolate-size: allow-keywords;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100svh;
+        line-height: var(--font-family-base-line-height, 1.6);
+    }
+
+    h1, h2, h3, h4,
+    button, input, label {
+        line-height: var(--font-family-heading-line-height, 1.1);
+    }
+
+    input, button,
+    textarea, select {
+        font-family: inherit;
+        font-size: inherit;
+    }
+    
+    textarea:not([rows]) {
+        min-height: 10em;
+    }
+
+    :is(ul, ol)[class] {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h2, h3, h4, p,
+    figure, blockquote, dl, dd {
+        margin-block-end: 0;
+    }
+
+    h1, h2, h3, h4 {
+        text-wrap: balance;
+        font-family: var(--font-family-heading, system-ui), sans-serif;
+    }
+
+    p, li, figcaption {
+        max-width: var(--body-max-width, 75ch);
+        text-wrap: pretty;
+    }
+    
+    code {
+        font-family: var(--font-family-code, monospace), serif;
+    }
+    
+    img,
+    picture {
+        display: block;
+        max-width: 100%;
+    }
+    
+    td, math, time[datetime*=":"] {
+        font-variant-numeric: tabular-nums lining-nums;
+    }
+
+    :target {
+        scroll-margin-block: 5rlh;
+    }
+    
+    @media (hover: hover) {
+        button:not(:disabled) {
+            cursor: pointer;
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
+    }
+}
