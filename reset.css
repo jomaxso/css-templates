@@ -87,6 +87,10 @@
     td, math, time[datetime*=":"] {
         font-variant-numeric: tabular-nums lining-nums;
     }
+    
+    table {
+        border-collapse: collapse;
+    }
 
     :target {
         scroll-margin-block: 5rlh;
